@@ -1,0 +1,242 @@
+@import "../../app.scss";
+
+.nav__li--logo--responsive,
+.nav__li--logo {
+  color: $black;
+  display: none;
+}
+.nav__ul--responsive {
+  align-items: center;
+  list-style: none;
+  display: flex;
+}
+
+/* ---------------------------------------------------------------- nav */
+.navbar {
+  justify-content: space-between;
+  background-color: $black;
+  align-items: center;
+  padding: 10px 50px;
+  position: fixed;
+  transition: 1s;
+  display: flex;
+  height: 70px;
+  z-index: 999;
+  width: 100%;
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  .nav__li {
+    letter-spacing: 0.5px;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    a {
+      text-decoration: none;
+      list-style: none;
+      color: $white;
+      &:hover {
+        color: $orange;
+      }
+    }
+    &::before {
+      background-color: $white;
+      border-radius: 4px;
+      position: absolute;
+      transition: 0.2s;
+      height: 0.5px;
+      bottom: -5px;
+      content: "";
+      width: 0%;
+    }
+    &:hover::before {
+      transition: 0.2s;
+      width: 100%;
+    }
+  }
+  .nav__ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+  }
+}
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding: 10px 50px;
+  transition: 1s;
+  display: flex;
+  height: 100px;
+  width: 100%;
+  z-index: 2;
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  &__li {
+    letter-spacing: 0.5px;
+    align-items: center;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    & > a {
+      text-decoration: none;
+      list-style: none;
+      color: $white;
+      &:hover {
+        color: $orange;
+      }
+    }
+    &::before {
+      background-color: $white;
+      border-radius: 4px;
+      position: absolute;
+      transition: 0.2s;
+      bottom: -5px;
+      content: "";
+      height: 1px;
+      width: 0%;
+    }
+    &:hover::before {
+      transition: 0.2s;
+      width: 100%;
+    }
+  }
+  &__ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+  }
+}
+
+/* ---------------------------------------------------------------- responsive */
+
+@media (max-width: 800px) {
+  .nav__li--logo--responsive,
+  .nav__li--logo {
+    cursor: pointer;
+    font-size: 24px;
+    display: block;
+    color: $white;
+  }
+  .nav__ul--responsive {
+    background-color: $black;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transition: 0.5s;
+    z-index: 999;
+    height: 80px;
+    width: 100%;
+    top: -80px;
+    left: 0px;
+  }
+  .navbar {
+    align-items: center;
+    height: 80px;
+    bottom: 0px;
+    width: 100%;
+    .nav__li {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      a {
+        flex-direction: column;
+        text-decoration: none;
+        align-items: center;
+        list-style: none;
+
+        display: flex;
+      }
+      &::before {
+        height: 0px;
+        width: 0%;
+      }
+      &:hover::before {
+        width: 0%;
+      }
+      .li__logo {
+        font-size: 20px;
+        display: block;
+      }
+    }
+    .nav__ul {
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      transition: 0.5s;
+      height: 100%;
+      left: -800px;
+      width: 100%;
+      top: -80px;
+    }
+    img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  .nav {
+    background-color: $black;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+    height: 80px;
+    bottom: 0px;
+    width: 100%;
+    &__li {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      & > a {
+        flex-direction: column;
+        text-decoration: none;
+        align-items: center;
+        list-style: none;
+
+        display: flex;
+      }
+      &::before {
+        height: 0px;
+        width: 0%;
+      }
+      &:hover::before {
+        width: 0%;
+      }
+    }
+    &__ul {
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      transition: 0.5s;
+      height: 100%;
+      left: -800px;
+      width: 100%;
+      top: -80px;
+    }
+    img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+}
